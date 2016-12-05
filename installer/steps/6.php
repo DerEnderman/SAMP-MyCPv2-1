@@ -39,18 +39,18 @@ if (sizeof($_POST)) {
     $config["mysql_database"] = $_SESSION["MySQLdatabase"];
     $config["data_accounts"] = $_SESSION["table_accounts"];
 
-    $config['header_img1'] = 'http://i.imgur.com/rcmV5b7.jpg';
-    $config['header_img2'] = 'http://i.imgur.com/JhXFdka.jpg';
-    $config['header_img3'] = 'http://i.imgur.com/t5kBv22.jpg';
+    $config['header_img1'] = '//i.imgur.com/rcmV5b7.jpg';
+    $config['header_img2'] = '//i.imgur.com/JhXFdka.jpg';
+    $config['header_img3'] = '//i.imgur.com/t5kBv22.jpg';
     $config['header_headline1'] = 'Lorem ipsum I';
     $config['header_headline2'] = 'Lorem ipsum II';
     $config['header_headline3'] = 'Lorem ipsum III';
     $config['header_text1'] = ' Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ';
     $config['header_text2'] = ' Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ';
     $config['header_text3'] = ' Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ';
-    $config['start_img1'] = 'http://i.imgur.com/8Qu0QTG.png';
-    $config['start_img2'] = 'http://i.imgur.com/8Qu0QTG.png';
-    $config['start_img3'] = 'http://i.imgur.com/8Qu0QTG.png';
+    $config['start_img1'] = '//i.imgur.com/8Qu0QTG.png';
+    $config['start_img2'] = '//i.imgur.com/8Qu0QTG.png';
+    $config['start_img3'] = '//i.imgur.com/8Qu0QTG.png';
     $config['start_headline1'] = 'Über myCP';
     $config['start_headline2'] = 'Lorem Ipsum 2';
     $config['start_headline3'] = 'Lorem Ipsum 3';
@@ -81,8 +81,8 @@ if (sizeof($_POST)) {
     $config['status_finances'] = '1';
     $config['TS_servergroupname'] = 'VIP';
     $config['TS_servergroupID'] = '11';
-    $config['TS_verifydescription'] = 'verifizierter Benutzer';
-    $config['href_forum'] = 'https://sa-mp.de/';
+    $config['TS_verifydescription'] = 'Verifizierter Benutzer';
+    $config['href_forum'] = 'https://breadfish.de/';
     $config['color'] = 'rgb(50,122,182)';
     $config['version'] = '1.9';
     $config['samp_ipadress'] = '127.0.0.1:7777';
