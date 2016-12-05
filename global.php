@@ -381,8 +381,8 @@ $need = array(
     "data_adminrights" => "Admin",
 );
 
-$updateserver = "http://downloadarena.bauerj.eu/";
 $version = "2.4.3";
+
 /**
  * @param string $message Nachricht die ausgegeben werden soll
  * @param string $level {danger, warning, info, success}

@@ -85,8 +85,6 @@ if (sizeof($_POST)) {
     $config['href_forum'] = 'https://sa-mp.de/';
     $config['color'] = 'rgb(50,122,182)';
     $config['version'] = '1.9';
-    $config['last_updatecheck'] = '1419884176';
-    $config['update_available'] = 'myCP ist auf der allerneuesten Version 1.9.';
     $config['samp_ipadress'] = '127.0.0.1:7777';
     $config['ts3_ipadress'] = '127.0.0.1';
     $config["cronjob_key"] = false;

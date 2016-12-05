@@ -3,31 +3,6 @@
 $currentPage = "acp_start.php";
 include("global.php");
 
-$config = getConfig();
-if ($config["last_updatecheck"] + 60 * 60 * 12 < time())
-{
-    saveConfig(array("last_updatecheck" => time()));
-    flush();
-    $response = @file_get_contents($updateserver . "/versions/?version=" . $version);
-    $response = json_decode($response);
-    if ($response->code == "UPGRADE_SUGGESTED")
-    {
-        $config["update_available"] = "Es ist ein Update auf " . $response->version . " verfügbar.\n<br>";
-        $config["update_available"] .= "Folgende Änderungen sind in der Version enthalten: \n";
-        $config["update_available"] .= nl2br($response->changes);
-        $config["update_available"] .= "Klicken Sie <a>hier</a> um das Update durchzuführen.";
-    }
-    elseif ($response->code == "NO_UPDATE")
-    {
-        $config["update_available"] = "myCP ist auf der allerneuesten Version $version.";
-    }
-    else
-    {
-        $config["update_available"] = "Es konnte keine Verbindung zum Updateserver hergestellt werden.";
-    }
-    saveConfig(array("update_available" => $config["update_available"]));
-}
-
 require_admin();
 $title = "Start";
 include_once("templates/header_acp.php");
@@ -283,44 +258,6 @@ include_once("templates/header_acp.php");
             </div>
         </div>
     </div>
-<div class="col-lg-4">
-    <div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title"><i class="glyphicon glyphicon-save"></i> myCP Updates</h3>
-    </div>
-    <div class="panel-body">
-        <div class="table-responsive">
-            <?= $config["update_available"] ?>
-        </div>
-        <div class="text-right">
-            <a href="acp_update.php">Update durchführen <i class="fa fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
 </div>
-<div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title"><i class="glyphicon glyphicon-comment"></i> myCP Support</h3>
-        </div>
-        <div class="panel-body">
-            <div class="table-responsive">
-                <!-- Place this tag where you want the Live Helper Plugin to render. -->
-                <div id="lhc_status_container_page" ></div>
 
-                <!-- Place this tag after the Live Helper Plugin tag. -->
-                <script type="text/javascript">
-                    var LHCChatOptionsPage = {};
-                    LHCChatOptionsPage.opt = {};
-                    (function() {
-                        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                        po.src = '//support.mycp.xyz/index.php/chat/getstatusembed/(theme)/2';
-                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                    })();
-                </script>
-            </div>
-            <div class="text-right">
-                <a href="http://support.mycp.xyz/" target="_blank">direkt zum myCP Support <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-</div>
 <?php include_once("templates/footer_acp.php");
